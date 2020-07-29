@@ -13,7 +13,7 @@
         //create a transaction on success that you can read and write to 
     //store transactions
     //saveRecord which is called in your public/index.js
-    //Check if online or not. If online, take all stored transactions 
+    //Check if online or not. If online, take all stored transactions  and push them to mongo
     //clear objectStore od transactions
   
 //For reference, 17.3, activity 26 is the mini project that uses indexedDB
