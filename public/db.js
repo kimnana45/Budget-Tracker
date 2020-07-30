@@ -17,7 +17,7 @@ request.onsuccess = event => {
 
 request.onerror = event => console.log("Error:" + event.target.errorCode);
 
-saveRecord = record => {
+function saveRecord(record) {
     //create transaction on the pending db w/ readwrite access
     const transaction = db.transaction(["pending"], "readwrite");
     //access pending objectStore
@@ -26,7 +26,7 @@ saveRecord = record => {
     store.add(record);
 };
 
-checkDatabase = () => {
+function checkDatabase() {
     const transaction = db.transaction(["pending"], "readwrite");
     const store = transaction.objectStore("pending");
     //get all records from store and set to a variable
