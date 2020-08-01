@@ -15,19 +15,9 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-//deployed database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-//Connect to the Mongo DB
-if (MONGODB_URI) {
-  mongoose.connect(MONGODB_URI);
-} else {
-  mongoose.connect("mongodb://localhost/budget", {
-    useNewUrlParser: true,
-    useFindAndModify: false
-  });
-}
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/transaction", { useNewUrlParser: true });
 
-// routes
+// routesnode server
 app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
